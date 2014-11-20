@@ -1,0 +1,20 @@
+#background {
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    display: block;
+    position: absolute;
+}
+
+#background::after {
+    content: "";
+    background: url('../img/error.jpg');
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
