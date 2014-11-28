@@ -6,7 +6,7 @@
 #define LOGGEDIN "data/LoggedIn.csv"
 #define CATALOGUE "public/views/catalogue.html"
 
-int valid(char *name, char *password, char*line){
+int valid(char *name, char *password, char *line){
     char *tok;
     char **fields;
     fields = malloc(3*sizeof(char*));
@@ -15,9 +15,7 @@ int valid(char *name, char *password, char*line){
         if (i== 3) return 0;
         fields[i++] = strdup(tok);
     }
-
-    if (!strcmp(name, fields[1]) && !strcmp(password, fields[2]))
-        return 1;
+    if (!strcmp(name, fields[1]) && !strcmp(password, fields[2])) return 1;
     else return 0;
 }
 
@@ -71,12 +69,12 @@ int main(void){
     char *user = userAndPass[0];
     char *password = userAndPass[1];
 
-    return 0;
-
     FILE *members = fopen(MEMBERS, "r");
 
     if (!members){
         // TODO: print error, members file not found
+        printf("ERROR!");
+        return 0;
     }
 
     char line[1024];
@@ -85,6 +83,7 @@ int main(void){
         if (valid(user, password, tmp)){
             FILE *loggedin = fopen(LOGGEDIN, "a+");
             FILE *cat = fopen(CATALOGUE, "r");
+
             fprintf(loggedin, "%s\n", user);
             char out[512];
             while (fgets(out, 512, cat)){
