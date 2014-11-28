@@ -26,8 +26,6 @@ char** parsePostRequest(){
         exit(1);
     }
 
-
-
     long len = strtol(len_, NULL, 10);
     char *postdata = malloc(len + 1);
     if (!postdata) {
