@@ -41,6 +41,12 @@ else{
   }
 }
 
+print "Content-type: text/plain\n\n";
+print "testing...\n";
+print "user: $user\n";
+print "name: $name\n";
+print "password; $password\n";
+
 if ($canReg == 1){
 
 } else {

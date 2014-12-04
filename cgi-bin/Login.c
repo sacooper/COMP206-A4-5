@@ -4,7 +4,7 @@
 
 #define MEMBERS "../data/Members.csv"
 #define LOGGEDIN "../data/LoggedIn.csv"
-#define CATALOGUE "public/views/catalogue.html" // TODO: UPDATE
+#define CATALOGUE "../public/views/catalogue.html" // TODO: UPDATE
 
 int valid(char *name, char *password, char *line){
     char *tok;
@@ -23,13 +23,14 @@ char** parsePostRequest(){
     char *len_ = getenv("CONTENT_LENGTH");
     if (!len_){
         // invalid post request
-        exit(1);
+	exit(0);
     }
 
     long len = strtol(len_, NULL, 10);
     char *postdata = malloc(len + 1);
     if (!postdata) {
         // TODO: error page...
+	exit(0);
     }
     fgets(postdata, len + 1, stdin);
 
@@ -37,12 +38,14 @@ char** parsePostRequest(){
 
     char *sep1 = strchr(postdata, '&');
     if (!sep1){
+	exit(0);
         // invalid input - not enough args
     }
     *sep1 = '\0';
     sep1 += 1;
     char *username = strchr(postdata, '=');
     if (!username){
+	exit(0);
         // invalid format for post args
     }
     *username = 0;
@@ -50,6 +53,7 @@ char** parsePostRequest(){
 
     char *password = strchr(sep1, '=');
     if (!password){
+	exit(0);
         // invalid format for post args
     }
     *password = 0;
@@ -62,7 +66,6 @@ char** parsePostRequest(){
 
 int main(void){
     printf("Content-Type:text/html%c%c\n", 13, 10);
-
     char **userAndPass = parsePostRequest();
     char *user = userAndPass[0];
     char *password = userAndPass[1];
@@ -85,7 +88,7 @@ int main(void){
             fprintf(loggedin, "%s\n", user);
             char out[512];
             while (fgets(out, 512, cat)){
-                if (!strstr(out, "{user}"))
+                if (strstr(out, "{user}"))
                     printf("<input type=\"hidden\" name=\"user\" value=\"%s\"/>", user);
                 else
                     printf("%s", out);
@@ -97,4 +100,7 @@ int main(void){
     }
 
     // If we get here, it means incorrect login info
+
+    printf("Invalid login info");
+    return 0;
 }
