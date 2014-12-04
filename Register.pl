@@ -11,7 +11,7 @@ my $password = $form->param( 'password' );
 my $password_confirm = $form->param( 'password_confirm' );
 my $canReg = 1;
 my $errormessage = '';
-my $file = "data/Members.csv";
+my $file = "../data/Members.csv";
 
 if ($password eq "" || $user eq "" || $name eq  "") {
   $errormessage = "Empty fields<br><br>\n";

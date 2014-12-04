@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MEMBERS "data/Members.csv"
-#define LOGGEDIN "data/LoggedIn.csv"
-#define CATALOGUE "public/views/catalogue.html"
+#define MEMBERS "../data/Members.csv"
+#define LOGGEDIN "../data/LoggedIn.csv"
+#define CATALOGUE "public/views/catalogue.html" // TODO: UPDATE
 
 int valid(char *name, char *password, char *line){
     char *tok;

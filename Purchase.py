@@ -11,7 +11,7 @@ cgitb.enable()
 
 
 def verify_user(user):
-    with open('data/LoggedIn.csv', 'rb') as loggedin:
+    with open('../data/LoggedIn.csv', 'rb') as loggedin:
         reader = csv.reader(loggedin)
         for row in reader:
             if row[0] == user:
@@ -38,7 +38,7 @@ total = 0.0
 
 newRows = []
 
-with open('data/Inventory.csv', 'rb') as inventory:
+with open('../data/Inventory.csv', 'rb') as inventory:
     reader = csv.reader(inventory)
     for row in reader:
         if form.getvalue("num" + row[0]):
@@ -51,6 +51,6 @@ with open('data/Inventory.csv', 'rb') as inventory:
 
 print total
 
-with open('data/Inventory.csv', 'wb') as inventory:
+with open('../data/Inventory.csv', 'wb') as inventory:
     reader = csv.writer(inventory)
     reader.writerows(newRows)
