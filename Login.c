@@ -85,7 +85,7 @@ int main(void){
             fprintf(loggedin, "%s\n", user);
             char out[512];
             while (fgets(out, 512, cat)){
-                if (!strncmp(out, "{user}", 6))
+                if (!strstr(out, "{user}"))
                     printf("<input type=\"hidden\" name=\"user\" value=\"%s\"/>", user);
                 else
                     printf("%s", out);
