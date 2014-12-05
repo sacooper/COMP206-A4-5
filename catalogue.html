@@ -5,7 +5,7 @@
  <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
-<div class="background"></div>
+<div class="background"></div  >
 
 <table class="container">
  <th class="headers">
@@ -22,9 +22,44 @@
  </th>
 </table>
 
-<div style="display: block; padding: 100px;">
+<form>
+ <input type="hidden" value="{user}">
 
-</div>
+<table style="height:100%; z-index: 10;">
+ <th>Grey</th>
+ <th>Tabby</th>
+ <th>Grey White</th>
+ <tr>
+  <td style="width:25%; height:25%;"><img style="width:100%;" src="img/grey.jpg"></td>
+  <td style="width:25%; height:25%;"><img style="width:100%;" src="img/tabby.jpg"></td>
+  <td style="width:25%; height:25%;"><img style="width:100%;" src="img/grey-white.jpg"></td>
+ </tr>
+ <tr>
+  <td>Grey kitten super friendly!</td>
+  <td>Orange white kitten, would absolutely love to be yours!</td>
+  <td>Grey and white kitty who just wants to play!</td>
+ </tr>
+ <tr>
+  <td>
+   <input style="display:block; margin: auto;" name="greyQuantity" type="number" value="0" />
+   <input style="display:block; margin: auto;" type="checkbox"/>
+  </td>
+  <td>
+   <input style="display:block; margin: auto;" name="tabbyQuantity" type="number" value="0" />
+   <input style="display:block; margin: auto;" type="checkbox"/>
+  </td>
+  <td>
+   <input style="display:block; margin: auto;" name="greyWhiteQuantity" type="number" value="0" />
+   <input style="display:block; margin: auto;" type="checkbox"/>
+  </td>
+ </tr>
+ <tr>
+  <td></td>
+  <td><input style="display:block; margin: auto;" type="button" value="Submit"></td>
+  <td></td>
+ </tr>
+</table>
+</form>
 
 </body>
 
