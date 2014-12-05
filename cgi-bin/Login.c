@@ -17,8 +17,8 @@ void error(char *message){
     while (fgets(out, 512, errorpage)){
         if (strstr(out, "{errormessage}"))
             printf("<center><h3 style=\"color:red\">%s</h3></center>\n", message);
-        else if (strstr(out, "<link href=\"css/main.css\" rel=\"stylesheet\">"))
-            printf("<link href=\"../css/main.css\" rel=\"stylesheet\">");
+        else if (strstr(out, "<link href=\"css/error.css\" rel=\"stylesheet\">"))
+            printf("<link href=\"../css/error.css\" rel=\"stylesheet\">");
         else
             printf("%s", out);
     }

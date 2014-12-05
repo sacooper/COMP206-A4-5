@@ -31,8 +31,8 @@ print "Content-Type:text/html\r\n"
 if (not verify_user(user)):
     with open('../error.html', 'rb') as error:
         for row in error:
-            if "<link href=\"css/main.css\" rel=\"stylesheet\">" in row:
-                print "<link href=\"..css/main.css\" rel=\"stylesheet\">"
+            if "<link href=\"css/error.css\" rel=\"stylesheet\">" in row:
+                print "<link href=\"..css/error.css\" rel=\"stylesheet\">"
             else if "{{errormessage}}" in row:
                 print "<center><h3 style=\"color:red\">User not logged in</h3></center>\n"
 

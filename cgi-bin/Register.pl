@@ -68,8 +68,8 @@ if ($canReg == 1){
         if (index($line, "{errormessage}") != -1) {
             print $line;
         }
-        elsif (index($line, "<link href=\"css/main.css\" rel=\"stylesheet\">") != -1){
-            print "<link href=\"../css/main.css\" rel=\"stylesheet\">"
+        elsif (index($line, "<link href=\"css/error.css\" rel=\"stylesheet\">") != -1){
+            print "<link href=\"../css/error.css\" rel=\"stylesheet\">"
         }
         else {
             print "<center><h3 style=\"color:red\">$errormessage</h3></center>\n"
