@@ -55,6 +55,15 @@ if ($canReg == 1){
         elsif (index($line, "<link href=\"css/main.css\" rel=\"stylesheet\">") != -1){
             print "<link href=\"../css/main.css\" rel=\"stylesheet\">";
         }
+        elsif (index($line, "img/grey.jpg") != -1) {
+            printf("<td style=\"width:25%%; height:25%%;\"><img style=\"width:100%%;\" src=\"img/grey.jpg\"></td>");4
+        }
+        elsif (index($line, "img/tabby.jpg") != -1) {
+            printf("<td style=\"width:25%%; height:25%%;\"><img style=\"width:100%%;\" src=\"img/tabby.jpg\"></td>");4
+        }
+        elsif (index($line, "img/grey-white.jpg") != -1) {
+            printf("<td style=\"width:25%%; height:25%%;\"><img style=\"width:100%%;\" src=\"img/grey-white.jpg\"></td>");4
+        }
         else {
             print "$line\n";
         }
