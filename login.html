@@ -1,48 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login</title>
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/signin.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/signin.css">
 </head>
 <body>
 
-<div class="background"></div>
+    <div class="background"></div>
 
-<table class="container">
-  <th class="headers">
-    <a class="nav-button" href="index.html">Home</a>
-  </th>
-  <th class="headers">
-    <a class="nav-button" href="catalogue.html">Catalogue</a>
-  </th>
-  <th style="width:100%;">
-    <h2 style="margin-right: 52px" class="header-center">Welcome To The Everything Store</h2>
-  </th>
-  <th class="headers" style="right:0;">
-    <a class="nav-button" href="registration.html">Register</a>
-  </th>
-</table>
+    <table class="container">
+        <th class="headers">
+            <a class="nav-button" href="index.html">Home</a>
+        </th>
+        <th class="headers">
+            <a class="nav-button" href="catalogue.html">Catalogue</a>
+        </th>
+        <th style="width:100%;">
+            <h2 style="margin-right: 52px" class="header-center">Welcome To The Everything Store</h2>
+        </th>
+        <th class="headers" style="right:0;">
+            <a class="nav-button" href="registration.html">Register</a>
+        </th>
+    </table>
+    
+    <form class="form-signin" role="form" action="./cgi-bin/Login.cgi" method="POST">
 
-<div class="container">
+        <h2 style="text-align: center;" class="form-signin-heading">Please sign in</h2>
 
-  <form class="form-signin" role="form">
+        <input type="username" name="username" class="form-control" placeholder="Username" required autofocus>
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
 
-    <h2 style="text-align: center;" class="form-signin-heading">Please sign in</h2>
-
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="signin-button" type="submit">Sign in</button>
-  </form>
-
-</div>
-
+        <input type="submit" value="Login">
+    </form>
 </body>
 
-</html> 
+</html>

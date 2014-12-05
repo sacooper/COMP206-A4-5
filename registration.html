@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>Registration</title>
- <link rel="stylesheet" href="css/main.css">
- <link rel="stylesheet" href="css/signin.css">
+    <title>Registration</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/signin.css">
 </head>
 <body>
 
 
-<div class="background"></div>
+    <div class="background"></div>
 
-<table class="container">
- <th class="headers">
-  <a class="nav-button" href="index.html">Home</a>
- </th>
- <th class="headers">
-  <a class="nav-button" href="catalogue.html">Catalogue</a>
- </th>
- <th style="width:100%">
-  <h2 class="header-center" style="margin-right: 131px">Welcome To The Everything Store</h2>
- </th>
-</table>
+    <table class="container">
+        <th class="headers">
+            <a class="nav-button" href="index.html">Home</a>
+        </th>
+        <th class="headers">
+            <a class="nav-button" href="catalogue.html">Catalogue</a>
+        </th>
+        <th style="width:100%">
+            <h2 class="header-center" style="margin-right: 131px">Welcome To The Everything Store</h2>
+        </th>
+    </table>
 
-<div class="container">
+    <form class="form-signin" role="form" action="./cgi-bin/Register.pl" method="POST">
+        <h2 style="text-align: center;" class="form-signin-heading">Please Register</h2>
+        <input name="name" class="form-control" placeholder="Full Name" required autofocus>
+        <input name="user" class="form-control" placeholder="Username" required>
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
+        <input type="password" name="password_confirm" class="form-control" placeholder="Confirm Password" required>
+        <input type="submit" value="Register">
+    </form>
 
- <form class="form-signin" role="form">
-  <h2 style="text-align: center;" class="form-signin-heading">Please Register</h2>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-  <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
-  <button class="signin-button" type="submit">Register</button>
- </form>
 
-</div> <!-- /container -->
 
 </body>
 
-</html> 
+</html>

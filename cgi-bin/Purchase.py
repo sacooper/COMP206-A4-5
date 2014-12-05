@@ -28,11 +28,15 @@ if os.environ['REQUEST_METHOD'] != 'POST':
 form = cgi.FieldStorage()
 user = form['user'].value
 print "Content-Type:text/html\r\n"
-if (verify_user(user)):
-    print "User logged in"
-else:
-    print "User not logged in"
-    exit(0);
+if (not verify_user(user)):
+    with open('../error.html', 'rb') as error:
+        for row in error:
+            if "<link href=\"css/error.css\" rel=\"stylesheet\">" in row:
+                print "<link href=\"..css/error.css\" rel=\"stylesheet\">"
+            if "<link href=\"css/main.css\" rel=\"stylesheet\">" in row:
+                print "<link href=\"../css/main.css\" rel=\"stylesheet\">" in row
+            else if "{{errormessage}}" in row:
+                print "<center><h3 style=\"color:red\">User not logged in</h3></center>\n"
 
 total = 0.0
 
@@ -49,8 +53,43 @@ with open('../data/Inventory.csv', 'rb') as inventory:
             row[1] = int(row[1]) - amount
         newRows.append(row)
 
-print total
-
 with open('../data/Inventory.csv', 'wb') as inventory:
     reader = csv.writer(inventory)
     reader.writerows(newRows)
+
+print """
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Home</title>
+ <link href="../css/main.css" rel="stylesheet">
+</head>
+<body>
+<div class="background"></div>
+
+<table class="container">
+ <th class="headers">
+  <a class="nav-button" href="index.html">Home</a>
+ </th>
+ <th class="headers">
+  <a class="nav-button" href="catalogue.html">Catalogue</a>
+ </th>
+ <th style="width:100%">
+  <h2 class="header-center">Welcome To The Everything Store</h2>
+ </th>
+ <th class="headers" style="right:0;">
+  <a class="nav-button" href="login.html">Login</a>
+ </th>
+</table>
+
+<div style="display: block; padding: 100px;">
+
+</div>
+"""
+print "<h3>Total: {0}</h3>".format(total)
+print """
+</body>
+
+</html>
+
+"""
