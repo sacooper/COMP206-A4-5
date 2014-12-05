@@ -31,10 +31,11 @@ print "Content-Type:text/html\r\n"
 if (not verify_user(user)):
     with open('/home/2013/scoope27/public_html/error.html', 'rb') as error:
         for row in error:
-            if "{{errormessage}}" in row:
+            if "errormessage" in row:
                 print "<center><h3 style=\"color:red\">User not logged in</h3></center>\n"
             else:
                 print row
+    quit()
 
 total = 0.0
 
