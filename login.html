@@ -1,53 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Home</title>
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/signin.css">
-  <script type="application/javascript" src="../js/bootstrap.min.js"></script>
+  <title>Login</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/signin.css">
 </head>
 <body>
-<nav class="navbar navbar-default" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-  </div>
-  <span class="navbar-brand">Welcome to the everything store!</span>
-  <div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav navbar-left">
-      <li><a href="index.html">
-        <span class="glyphicon glyphicon-home"> Home</span>
-      </a></li>
-      <li><a href="catalogue.html">Catalogue</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="registration.html">Register</a></li>
-    </ul>
-  </div>
-</nav>
+
+<div class="background"></div>
+
+<table class="container">
+  <th class="headers">
+    <a class="nav-button" href="index.html">Home</a>
+  </th>
+  <th class="headers">
+    <a class="nav-button" href="catalogue.html">Catalogue</a>
+  </th>
+  <th style="width:100%;">
+    <h2 style="margin-right: 52px" class="header-center">Welcome To The Everything Store</h2>
+  </th>
+  <th class="headers" style="right:0;">
+    <a class="nav-button" href="registration.html">Register</a>
+  </th>
+</table>
 
 <div class="container">
 
   <form class="form-signin" role="form">
-    <h2 class="form-signin-heading">Please sign in</h2>
-    <label for="inputEmail" class="sr-only">Email address</label>
+
+    <h2 style="text-align: center;" class="form-signin-heading">Please sign in</h2>
+
     <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-    <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
     <div class="checkbox">
       <label>
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <button class="signin-button" type="submit">Sign in</button>
   </form>
 
-</div> <!-- /container -->
+</div>
 
 </body>
 

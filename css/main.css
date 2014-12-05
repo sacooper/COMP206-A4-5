@@ -40,6 +40,11 @@ body {
     margin: 0;
 }
 
+.header-center{
+    color:#555;
+    margin-right: 90px;
+}
+
 .nav-button {
     display: block;
     padding: 10px;
