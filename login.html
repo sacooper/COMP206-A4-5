@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>Login</title>
- <link rel="stylesheet" href="css/main.css">
- <link rel="stylesheet" href="css/signin.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/signin.css">
 </head>
 <body>
-<div class="background"></div> 
 
-<table style="position:relative; width:100%;">
-  <th><a href="index.html">Home</a></th>
-  <th><a href="catalogue.html">Catalogue</a></th>
-  <th style="width:100%">Welcome To The Cat Store</th>
-  <th style="position:absolute; right:0; top: 0;"><a href="login.html">Login</a></th>
-</table>
+    <div class="background"></div>
 
-<form action="./cgi-bin/login.cgi" method="POST">
-    <label>Username: </label><input name="username" placeholder="Username"><br>
-    <label>Password: </label><input type="password" name="password"><br>
-    <input type="submit" value="Login">
-</form>
+    <table class="container">
+        <th class="headers">
+            <a class="nav-button" href="index.html">Home</a>
+        </th>
+        <th class="headers">
+            <a class="nav-button" href="catalogue.html">Catalogue</a>
+        </th>
+        <th style="width:100%;">
+            <h2 style="margin-right: 52px" class="header-center">Welcome To The Everything Store</h2>
+        </th>
+        <th class="headers" style="right:0;">
+            <a class="nav-button" href="registration.html">Register</a>
+        </th>
+    </table>
+    
+    <form class="form-signin" role="form" action="./cgi-bin/Login.cgi" method="POST">
 
+        <h2 style="text-align: center;" class="form-signin-heading">Please sign in</h2>
+
+        <input  id="username" class="form-control" placeholder="Username" required autofocus>
+        <input type="password" id="password" class="form-control" placeholder="Password" required>
+
+        <input type = "submit" value="Login">
+    </form>
 </body>
 
 </html>
