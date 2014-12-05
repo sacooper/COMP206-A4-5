@@ -33,6 +33,8 @@ if (not verify_user(user)):
         for row in error:
             if "<link href=\"css/error.css\" rel=\"stylesheet\">" in row:
                 print "<link href=\"..css/error.css\" rel=\"stylesheet\">"
+            if "<link href=\"css/main.css\" rel=\"stylesheet\">" in row:
+                print "<link href=\"../css/main.css\" rel=\"stylesheet\">" in row
             else if "{{errormessage}}" in row:
                 print "<center><h3 style=\"color:red\">User not logged in</h3></center>\n"
 
@@ -60,7 +62,7 @@ print """
 <html>
 <head>
  <title>Home</title>
- <link href="css/main.css" rel="stylesheet">
+ <link href="../css/main.css" rel="stylesheet">
 </head>
 <body>
 <div class="background"></div>
