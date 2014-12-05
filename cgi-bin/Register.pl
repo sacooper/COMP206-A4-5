@@ -42,13 +42,31 @@ else{
 }
 
 print "Content-type: text/plain\n\n";
-print "testing...\n";
-print "user: $user\n";
-print "name: $name\n";
-print "password; $password\n";
 
 if ($canReg == 1){
-
+    open(CATALOGUE, "<../catalgue.html");
+    my @cat = <CATALOGUE>;
+    close(CATALOGUE);
+    foreach my $line (@cat)
+    {
+        if (index($line, "{user}") != -1) {
+            print "$line\n";
+        }
+        else {
+            print "<input type=\"hidden\" name=\"user\" value=\"$user\"/>\n"
+        }
+    }
 } else {
-
+    open(ERROR, "<../error.html");
+    my @errorpage = <ERROR>;
+    close(CATALOGUE);
+    foreach my $line (@errorpage)
+    {
+        if (index($line, "{errormessage}") != -1) {
+            print $line;
+        }
+        else {
+            print "<h3 style=\"color:red\">$errormessage</h3>\n"
+        }
+    }
 }
