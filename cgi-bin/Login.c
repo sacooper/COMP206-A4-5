@@ -4,7 +4,7 @@
 
 #define MEMBERS "../data/Members.csv"
 #define LOGGEDIN "../data/LoggedIn.csv"
-#define CATALOGUE "../public/views/catalogue.html" // TODO: UPDATE
+#define CATALOGUE "../catalogue.html"
 
 int valid(char *name, char *password, char *line){
     char *tok;
