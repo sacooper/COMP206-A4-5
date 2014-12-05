@@ -52,6 +52,9 @@ if ($canReg == 1){
         if (index($line, "{user}") != -1) {
             print "$line\n";
         }
+        elsif (index($line, "<link href=\"css/main.css\" rel=\"stylesheet\">") != -1){
+            print "<link href=\"../css/main.css\" rel=\"stylesheet\">"
+        }
         else {
             print "<input type=\"hidden\" name=\"user\" value=\"$user\"/>\n"
         }
@@ -64,6 +67,9 @@ if ($canReg == 1){
     {
         if (index($line, "{errormessage}") != -1) {
             print $line;
+        }
+        elsif (index($line, "<link href=\"css/main.css\" rel=\"stylesheet\">") != -1){
+            print "<link href=\"../css/main.css\" rel=\"stylesheet\">"
         }
         else {
             print "<h3 style=\"color:red\">$errormessage</h3>\n"

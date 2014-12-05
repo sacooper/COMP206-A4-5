@@ -17,6 +17,8 @@ void error(char *message){
     while (fgets(out, 512, errorpage)){
         if (strstr(out, "{errormessage}"))
             printf("<h3 style=\"color:red\">%s</h3>\n", message);
+        else if (strstr(out, "<link href=\"css/main.css\" rel=\"stylesheet\">"))
+            printf("<link href=\"../css/main.css\" rel=\"stylesheet\">");
         else
             printf("%s", out);
     }
@@ -106,6 +108,8 @@ int main(void){
             while (fgets(out, 512, cat)){
                 if (strstr(out, "{user}"))
                     printf("<input type=\"hidden\" name=\"user\" value=\"%s\"/>", user);
+                else if (strstr(out, "<link href=\"css/main.css\" rel=\"stylesheet\">"))
+                    printf("<link href=\"../css/main.css\" rel=\"stylesheet\">");
                 else
                     printf("%s", out);
             }
