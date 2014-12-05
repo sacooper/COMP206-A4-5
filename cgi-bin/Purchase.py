@@ -11,7 +11,7 @@ cgitb.enable()
 
 
 def verify_user(user):
-    with open('~/public_html/data/LoggedIn.csv', 'rb') as loggedin:
+    with open('/home/2013/scoope27/public_html/data/LoggedIn.csv', 'rb') as loggedin:
         reader = csv.reader(loggedin)
         for row in reader:
             if row[0] == user:
@@ -29,7 +29,7 @@ form = cgi.FieldStorage()
 user = form['user'].value
 print "Content-Type:text/html\r\n"
 if (not verify_user(user)):
-    with open('~/public_html/error.html', 'rb') as error:
+    with open('/home/2013/scoope27/public_html/error.html', 'rb') as error:
         for row in error:
             if "{{errormessage}}" in row:
                 print "<center><h3 style=\"color:red\">User not logged in</h3></center>\n"
@@ -40,7 +40,7 @@ total = 0.0
 
 newRows = []
 
-with open('~/public_html/data/Inventory.csv', 'rb') as inventory:
+with open('/home/2013/scoope27/public_html/data/Inventory.csv', 'rb') as inventory:
     reader = csv.reader(inventory)
     for row in reader:
         if form.getvalue("num" + row[0]):
@@ -51,7 +51,7 @@ with open('~/public_html/data/Inventory.csv', 'rb') as inventory:
             row[1] = int(row[1]) - amount
         newRows.append(row)
 
-with open('~/public_html/data/Inventory.csv', 'wb') as inventory:
+with open('/home/2013/scoope27/public_html/data/Inventory.csv', 'wb') as inventory:
     reader = csv.writer(inventory)
     reader.writerows(newRows)
 
