@@ -50,13 +50,13 @@ if ($canReg == 1){
     foreach my $line (@cat)
     {
         if (index($line, "{user}") != -1) {
-            print "$line\n";
+            print "<input type=\"hidden\" name=\"user\" value=\"$user\"/>\n";
         }
         elsif (index($line, "<link href=\"css/main.css\" rel=\"stylesheet\">") != -1){
             print "<link href=\"../css/main.css\" rel=\"stylesheet\">";
         }
         else {
-            print "<input type=\"hidden\" name=\"user\" value=\"$user\"/>\n";
+            print "$line\n";
         }
     }
 } else {
