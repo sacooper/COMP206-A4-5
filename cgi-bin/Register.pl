@@ -13,7 +13,7 @@ my $canReg = 1;
 my $errormessage = '';
 my $file = "../data/Members.csv";
 
-if ($password eq "" || $user eq "" || $name eq  "") {
+if ($password eq "" || $user eq "" || $name eq  "" || $password_confirm eq "") {
   $errormessage = "Empty fields<br><br>\n";
   $canReg = 0;
 }
