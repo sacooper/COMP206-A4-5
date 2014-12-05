@@ -11,7 +11,7 @@ my $password = $form->param( 'password' );
 my $password_confirm = $form->param( 'password_confirm' );
 my $canReg = 1;
 my $errormessage = '';
-my $file = "../data/Members.csv";
+my $file = "~/public_html/data/Members.csv";
 
 if ($password eq "" || $user eq "" || $name eq  "" || $password_confirm eq "") {
   $errormessage = "Empty fields<br><br>\n";
@@ -44,7 +44,7 @@ else{
 print "Content-type: text/html\n\n";
 
 if ($canReg == 1){
-    open(CATALOGUE, "<http://cs.mcgill.ca/~scoope27/catalgue.html");
+    open(CATALOGUE, "<~/public_html/catalgue.html");
     my @cat = <CATALOGUE>;
     close(CATALOGUE);
     foreach my $line (@cat)
@@ -57,7 +57,7 @@ if ($canReg == 1){
         }
     }
 } else {
-    open(ERROR, "<http://cs.mcgill.ca/~scoope27/error.html");
+    open(ERROR, "<~/public_html/error.html");
     my @errorpage = <ERROR>;
     close(CATALOGUE);
     foreach my $line (@errorpage)

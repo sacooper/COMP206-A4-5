@@ -4,6 +4,7 @@
     <title>Login</title>
     <link href="http://cs.mcgill.ca/~scoope27/css/main.css" rel="stylesheet">
     <link href="http://cs.mcgill.ca/~scoope27/css/error.css" rel="stylesheet">
+    <link href="http://cs.mcgill.ca/~scoope27/css/signin.css" rel="stylesheet">
 </head>
 <body>
 
@@ -23,17 +24,15 @@
             <a class="nav-button" href="http://cs.mcgill.ca/~scoope27/registration.html">Register</a>
         </th>
     </table>
-    <center>
-        <form class="form-signin" role="form" action="http://cs.mcgill.ca/~scoope27/cgi-bin/Login.cgi" method="POST">
+    <form class="form-signin" role="form" action="http://cs.mcgill.ca/~scoope27/cgi-bin/Login.cgi" method="POST">
 
-            <h2 style="text-align: center;" class="form-signin-heading">Please sign in</h2>
+        <h2 style="text-align: center;" class="form-signin-heading">Please sign in</h2>
 
-            <input type="username" name="username" class="form-control" placeholder="Username" required autofocus> <br>
-            <input type="password" name="password" class="form-control" placeholder="Password" required><br>
+        <input type="username" name="username" class="form-control" placeholder="Username" required autofocus>
+        <input type="password" name="password" class="form-control" placeholder="Password" required><br>
 
-            <input type="submit" value="Login">
-        </form>
-    </center>
+        <input type="submit" value="Login">
+    </form>
 </body>
 
 </html>

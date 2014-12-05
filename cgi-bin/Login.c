@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MEMBERS "../data/Members.csv"
-#define LOGGEDIN "../data/LoggedIn.csv"
-#define CATALOGUE "http://cs.mcgill.ca/~scoope27//catalogue.html"
-#define ERROR "http://cs.mcgill.ca/~scoope27/error.html"
+#define MEMBERS "~/public_html/data/Members.csv"
+#define LOGGEDIN "~/public_html/data/LoggedIn.csv"
+#define CATALOGUE "~/public_html/catalogue.html"
+#define ERROR "~/public_html/error.html"
 
 void error(char *message){
     FILE *errorpage = fopen(ERROR, "r");
