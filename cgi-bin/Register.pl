@@ -41,7 +41,7 @@ else{
   }
 }
 
-print "Content-type: text/plain\n\n";
+print "Content-type: text/html\n\n";
 
 if ($canReg == 1){
     open(CATALOGUE, "<../catalgue.html");
@@ -53,10 +53,10 @@ if ($canReg == 1){
             print "$line\n";
         }
         elsif (index($line, "<link href=\"css/main.css\" rel=\"stylesheet\">") != -1){
-            print "<link href=\"../css/main.css\" rel=\"stylesheet\">"
+            print "<link href=\"../css/main.css\" rel=\"stylesheet\">";
         }
         else {
-            print "<input type=\"hidden\" name=\"user\" value=\"$user\"/>\n"
+            print "<input type=\"hidden\" name=\"user\" value=\"$user\"/>\n";
         }
     }
 } else {
@@ -66,16 +66,16 @@ if ($canReg == 1){
     foreach my $line (@errorpage)
     {
         if (index($line, "{errormessage}") != -1) {
-            print $line;
+            print "<center><h3 style=\"color:red\">$errormessage</h3></center>\n";
         }
         elsif (index($line, "<link href=\"css/error.css\" rel=\"stylesheet\">") != -1){
-            print "<link href=\"../css/error.css\" rel=\"stylesheet\">"
+            print "<link href=\"../css/error.css\" rel=\"stylesheet\">";
         }
         elsif (index($line, "<link href=\"css/main.css\" rel=\"stylesheet\">") != -1){
-            print "<link href=\"../css/main.css\" rel=\"stylesheet\">"
+            print "<link href=\"../css/main.css\" rel=\"stylesheet\">";
         }
         else {
-            print "<center><h3 style=\"color:red\">$errormessage</h3></center>\n"
+            print $line;
         }
     }
 }
