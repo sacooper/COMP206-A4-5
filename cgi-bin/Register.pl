@@ -72,7 +72,7 @@ if ($canReg == 1){
             print "<link href=\"../css/main.css\" rel=\"stylesheet\">"
         }
         else {
-            print "<h3 style=\"color:red\">$errormessage</h3>\n"
+            print "<center><h3 style=\"color:red\">$errormessage</h3></center>\n"
         }
     }
 }

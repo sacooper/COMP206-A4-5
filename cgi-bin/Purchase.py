@@ -34,7 +34,7 @@ if (not verify_user(user)):
             if "<link href=\"css/main.css\" rel=\"stylesheet\">" in row:
                 print "<link href=\"..css/main.css\" rel=\"stylesheet\">"
             else if "{{errormessage}}" in row:
-                print "<h3 style=\"color:red\">User not logged in</h3>\n"
+                print "<center><h3 style=\"color:red\">User not logged in</h3></center>\n"
 
 total = 0.0
 
