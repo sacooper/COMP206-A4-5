@@ -34,6 +34,10 @@ char** parsePostRequest(){
     }
     fgets(postdata, len + 1, stdin);
 
+    if (!strstr(postdata, "username") || !strstr(postdata, "password")){
+        // invalid form paramaters
+        exit(0);
+    }
     char ** ret = malloc(2*sizeof(char*));
 
     char *sep1 = strchr(postdata, '&');
