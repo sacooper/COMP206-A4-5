@@ -9,7 +9,7 @@
 
 #background::after {
     content: "";
-    background: url('../img/error.jpg');
+    background: url('http://cs.mcgill.ca/~scoope27/img/error.jpg');
     opacity: 0.4;
     top: 0;
     left: 0;

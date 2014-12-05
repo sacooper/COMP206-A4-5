@@ -12,7 +12,7 @@ body {
 
 .background::after {
     content: "";
-    background: url('../img/cats.jpg');
+    background: url('http://cs.mcgill.ca/~scoope27/img/cats.jpg');
     background-size: 100% auto;
     background-size: cover;
     opacity: 0.4;
