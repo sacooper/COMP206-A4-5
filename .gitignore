@@ -1,1 +1,4 @@
-login.cgi
+cgi-bin/Login.cgi
+data/
+.gitignore
+
