@@ -83,9 +83,11 @@ print """
 <div style="display: block; padding: 100px;">
 
 </div>
+<center>
 """
 print "<h3>Total: {0}</h3>".format(total)
 print """
+</center>
 </body>
 
 </html>
