@@ -22,11 +22,11 @@ void error(char *message){
         else if (strstr(out, "<link href=\"css/main.css\" rel=\"stylesheet\">"))
             printf("<link href=\"../css/main.css\" rel=\"stylesheet\">");
         else if (strstr(out, "img/grey.jpg"))
-            printf("<td style=\"width:25%%; height:25%%;\"><img style=\"width:100%%;\" src=\"img/grey.jpg\"></td>");
+            printf("<td style=\"width:25%%; height:25%%;\"><img style=\"width:100%%;\" src=\"../img/grey.jpg\"></td>");
         else if (strstr(out, "img/tabby.jpg"))
-            printf("<td style=\"width:25%%; height:25%%;\"><img style=\"width:100%%;\" src=\"img/tabby.jpg\"></td>");
+            printf("<td style=\"width:25%%; height:25%%;\"><img style=\"width:100%%;\" src=\"../img/tabby.jpg\"></td>");
         else if (strstr(out, "img/grey-white.jpg"))
-            printf("<td style=\"width:25%%; height:25%%;\"><img style=\"width:100%%;\" src=\"img/grey-white.jpg\"></td>");
+            printf("<td style=\"width:25%%; height:25%%;\"><img style=\"width:100%%;\" src=\"../img/grey-white.jpg\"></td>");
         else
             printf("%s", out);
     }
