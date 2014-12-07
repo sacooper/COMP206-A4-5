@@ -44,47 +44,30 @@ else{
 print "Content-type: text/html\n\n";
 
 if ($canReg == 1){
-    open(CATALOGUE, "<../catalgue.html");
-    my @cat = <CATALOGUE>;
-    close(CATALOGUE);
-    foreach my $line (@cat)
+    my $entry = join(',', $name, $user, $password);
+    open(LOG, ">>$file");
+    print LOG "$entry\n";
+    close(LOG);
+    open(INDEX, "< ../index.html");
+    my @errorpage = <INDEX>;
+    close(INDEX);
+    foreach my $line (@errorpage)
     {
-        if (index($line, "{user}") != -1) {
-            print "<input type=\"hidden\" name=\"user\" value=\"$user\"/>\n";
-        }
-        elsif (index($line, "<link href=\"css/main.css\" rel=\"stylesheet\">") != -1){
-            print "<link href=\"../css/main.css\" rel=\"stylesheet\">";
-        }
-        elsif (index($line, "img/grey.jpg") != -1) {
-            printf("<td style=\"width:25%%; height:25%%;\"><img style=\"width:100%%;\" src=\"img/grey.jpg\"></td>");4
-        }
-        elsif (index($line, "img/tabby.jpg") != -1) {
-            printf("<td style=\"width:25%%; height:25%%;\"><img style=\"width:100%%;\" src=\"img/tabby.jpg\"></td>");4
-        }
-        elsif (index($line, "img/grey-white.jpg") != -1) {
-            printf("<td style=\"width:25%%; height:25%%;\"><img style=\"width:100%%;\" src=\"img/grey-white.jpg\"></td>");4
-        }
-        else {
-            print "$line\n";
-        }
+        print $line;
     }
+
 } else {
-    open(ERROR, "<../error.html");
+    open(ERROR, "< ../error.html");
     my @errorpage = <ERROR>;
-    close(CATALOGUE);
+    close(ERROR);
     foreach my $line (@errorpage)
     {
         if (index($line, "{errormessage}") != -1) {
             print "<center><h3 style=\"color:red\">$errormessage</h3></center>\n";
-        }
-        elsif (index($line, "<link href=\"css/error.css\" rel=\"stylesheet\">") != -1){
-            print "<link href=\"../css/error.css\" rel=\"stylesheet\">";
-        }
-        elsif (index($line, "<link href=\"css/main.css\" rel=\"stylesheet\">") != -1){
-            print "<link href=\"../css/main.css\" rel=\"stylesheet\">";
         }
         else {
             print $line;
         }
     }
 }
+

@@ -11,7 +11,7 @@ cgitb.enable()
 
 
 def verify_user(user):
-    with open('../data/LoggedIn.csv', 'rb') as loggedin:
+    with open('/home/2013/scoope27/public_html/data/LoggedIn.csv', 'rb') as loggedin:
         reader = csv.reader(loggedin)
         for row in reader:
             if row[0] == user:
@@ -29,20 +29,19 @@ form = cgi.FieldStorage()
 user = form['user'].value
 print "Content-Type:text/html\r\n"
 if (not verify_user(user)):
-    with open('../error.html', 'rb') as error:
+    with open('/home/2013/scoope27/public_html/error.html', 'rb') as error:
         for row in error:
-            if "<link href=\"css/error.css\" rel=\"stylesheet\">" in row:
-                print "<link href=\"..css/error.css\" rel=\"stylesheet\">"
-            if "<link href=\"css/main.css\" rel=\"stylesheet\">" in row:
-                print "<link href=\"../css/main.css\" rel=\"stylesheet\">" in row
-            else if "{{errormessage}}" in row:
+            if "errormessage" in row:
                 print "<center><h3 style=\"color:red\">User not logged in</h3></center>\n"
+            else:
+                print row
+    quit()
 
 total = 0.0
 
 newRows = []
 
-with open('../data/Inventory.csv', 'rb') as inventory:
+with open('/home/2013/scoope27/public_html/data/Inventory.csv', 'rb') as inventory:
     reader = csv.reader(inventory)
     for row in reader:
         if form.getvalue("num" + row[0]):
@@ -53,7 +52,7 @@ with open('../data/Inventory.csv', 'rb') as inventory:
             row[1] = int(row[1]) - amount
         newRows.append(row)
 
-with open('../data/Inventory.csv', 'wb') as inventory:
+with open('/home/2013/scoope27/public_html/data/Inventory.csv', 'wb') as inventory:
     reader = csv.writer(inventory)
     reader.writerows(newRows)
 
@@ -62,32 +61,34 @@ print """
 <html>
 <head>
  <title>Home</title>
- <link href="../css/main.css" rel="stylesheet">
+ <link href="http://cs.mcgill.ca/~scoope27/css/main.css" rel="stylesheet">
 </head>
 <body>
 <div class="background"></div>
 
 <table class="container">
  <th class="headers">
-  <a class="nav-button" href="index.html">Home</a>
+  <a class="nav-button" href="http://cs.mcgill.ca/~scoope27/index.html">Home</a>
  </th>
  <th class="headers">
-  <a class="nav-button" href="catalogue.html">Catalogue</a>
+  <a class="nav-button" href="http://cs.mcgill.ca/~scoope27/catalogue.html">Catalogue</a>
  </th>
  <th style="width:100%">
   <h2 class="header-center">Welcome To The Everything Store</h2>
  </th>
  <th class="headers" style="right:0;">
-  <a class="nav-button" href="login.html">Login</a>
+  <a class="nav-button" href="http://cs.mcgill.ca/~scoope27/login.html">Login</a>
  </th>
 </table>
 
 <div style="display: block; padding: 100px;">
 
 </div>
+<center>
 """
 print "<h3>Total: {0}</h3>".format(total)
 print """
+</center>
 </body>
 
 </html>

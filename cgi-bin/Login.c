@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MEMBERS "../data/Members.csv"
-#define LOGGEDIN "../data/LoggedIn.csv"
-#define CATALOGUE "../catalogue.html"
-#define ERROR "../error.html"
+#define MEMBERS "/home/2013/scoope27/public_html/data/Members.csv"
+#define LOGGEDIN "/home/2013/scoope27/public_html/data/LoggedIn.csv"
+#define CATALOGUE "/home/2013/scoope27/public_html/catalogue.html"
+#define ERROR "/home/2013/scoope27/public_html/error.html"
 
 void error(char *message){
     FILE *errorpage = fopen(ERROR, "r");
@@ -17,16 +17,6 @@ void error(char *message){
     while (fgets(out, 512, errorpage)){ // Change lnks because of different path
         if (strstr(out, "{errormessage}"))
             printf("<center><h3 style=\"color:red\">%s</h3></center>\n", message);
-        else if (strstr(out, "<link href=\"css/error.css\" rel=\"stylesheet\">"))
-            printf("<link href=\"../css/error.css\" rel=\"stylesheet\">");
-        else if (strstr(out, "<link href=\"css/main.css\" rel=\"stylesheet\">"))
-            printf("<link href=\"../css/main.css\" rel=\"stylesheet\">");
-        else if (strstr(out, "img/grey.jpg"))
-            printf("<td style=\"width:25%%; height:25%%;\"><img style=\"width:100%%;\" src=\"img/grey.jpg\"></td>");
-        else if (strstr(out, "img/tabby.jpg"))
-            printf("<td style=\"width:25%%; height:25%%;\"><img style=\"width:100%%;\" src=\"img/tabby.jpg\"></td>");
-        else if (strstr(out, "img/grey-white.jpg"))
-            printf("<td style=\"width:25%%; height:25%%;\"><img style=\"width:100%%;\" src=\"img/grey-white.jpg\"></td>");
         else
             printf("%s", out);
     }
@@ -116,8 +106,6 @@ int main(void){
             while (fgets(out, 512, cat)){
                 if (strstr(out, "{user}"))
                     printf("<input type=\"hidden\" name=\"user\" value=\"%s\"/>", user);
-                else if (strstr(out, "<link href=\"css/main.css\" rel=\"stylesheet\">"))
-                    printf("<link href=\"../css/main.css\" rel=\"stylesheet\">");
                 else
                     printf("%s", out);
             }

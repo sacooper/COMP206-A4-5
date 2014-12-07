@@ -2,37 +2,41 @@
 <html>
 <head>
  <title>Home</title>
- <link href="css/main.css" rel="stylesheet">
+ <link href="http://cs.mcgill.ca/~scoope27/css/main.css" rel="stylesheet">
 </head>
 <body>
 <div class="background"></div  >
 
 <table class="container">
  <th class="headers">
+<<<<<<< HEAD
   <a class="nav-button" href="index.html" target="_blank">Home</a>
+=======
+  <a class="nav-button" href="http://cs.mcgill.ca/~scoope27/index.html">Home</a>
+>>>>>>> ce02d7bfdb92ef6c89c076f110fdeeb89ea7062d
  </th>
  <th class="headers">
-  <a class="nav-button" href="catalogue.html">Catalogue</a>
+  <a class="nav-button" href="http://cs.mcgill.ca/~scoope27/catalogue.html">Catalogue</a>
  </th>
  <th style="width:100%">
   <h2 class="header-center">Welcome To The Everything Store</h2>
  </th>
  <th class="headers" style="right:0;">
-  <a class="nav-button" href="login.html">Login</a>
+  <a class="nav-button" href="http://cs.mcgill.ca/~scoope27/login.html">Login</a>
  </th>
 </table>
 
-<form action="cgi-bin/Purchase.py" method="POST">
- <input type="hidden" value="{user}">
+<form action="http://cs.mcgill.ca/~scoope27/cgi-bin/Purchase.py" method="POST">
+ <input type="hidden" name="user" value="{user}">
 
 <table style="height:100%; z-index: 10;">
  <th>Grey</th>
  <th>Tabby</th>
  <th>Grey White</th>
  <tr>
-  <td style="width:25%; height:25%;"><img style="width:100%;" src="img/grey.jpg"></td>
-  <td style="width:25%; height:25%;"><img style="width:100%;" src="img/tabby.jpg"></td>
-  <td style="width:25%; height:25%;"><img style="width:100%;" src="img/grey-white.jpg"></td>
+  <td style="width:25%; height:25%;"><img style="width:100%;" src="http://cs.mcgill.ca/~scoope27/img/grey.jpg"></td>
+  <td style="width:25%; height:25%;"><img style="width:100%;" src="http://cs.mcgill.ca/~scoope27/img/tabby.jpg"></td>
+  <td style="width:25%; height:25%;"><img style="width:100%;" src="http://cs.mcgill.ca/~scoope27/img/grey-white.jpg"></td>
  </tr>
  <tr>
   <td>Grey kitten super friendly!</td>
@@ -41,22 +45,22 @@
  </tr>
  <tr>
   <td>
-   <input style="display:block; margin: auto;" name="greyQuantity" type="number" value="0" />
+   <input style="display:block; margin: auto;" name="numgrey" type="number" value="0" />
    <input style="display:block; margin: auto;" type="checkbox"/>
   </td>
   <td>
-   <input style="display:block; margin: auto;" name="tabbyQuantity" type="number" value="0" />
+   <input style="display:block; margin: auto;" name="numtabby" type="number" value="0" />
    <input style="display:block; margin: auto;" type="checkbox"/>
   </td>
   <td>
-   <input style="display:block; margin: auto;" name="greyWhiteQuantity" type="number" value="0" />
+   <input style="display:block; margin: auto;" name="numgreyWhite" type="number" value="0" />
    <input style="display:block; margin: auto;" type="checkbox"/>
   </td>
  </tr>
  <tr>
   <td></td>
-  <td><input style="display:block; margin: auto;" type="button" value="Submit"></td>
   <td></td>
+  <td><input style="display:block; margin: auto;" type="submit" value="Submit"></td>
  </tr>
 </table>
 </form>
